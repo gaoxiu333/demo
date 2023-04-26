@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
-    "start": "rollup -c -w"
+    "start": "rollup -c -w",
+    "test-build": "rollup -c ./config/rollup.config.js"
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,8 @@
     "rollup-plugin-generate-html-template": "^1.7.0",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-serve": "^2.0.2"
+  },
+  "dependencies": {
+    "typescript": "^4.9.5"
   }
 }
