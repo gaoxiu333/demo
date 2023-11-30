@@ -70,5 +70,15 @@ function fetchDate(value) {
     cache.add(value);
   }
 }
+const myMap = new Map([
+  ["key1", "value1"],
+  ["key2", "value2"],
+  ["key3", "value3"],
+]);
+
+myMap.forEach((value, key) => {
+  console.log(`${key} = ${value}`);
+});
+console.log(myMap)
 
 //  WeakSet的使用： WeakSet 是 Set 的变体，它只能包含对象引用，并且不接受原始类型的值，并且不会阻止垃圾回收。这对于存储对象的弱引用是有用的。
