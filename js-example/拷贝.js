@@ -36,3 +36,19 @@ const obj = {
 };
 
 deepClone(obj);
+
+function deepCopy(obj, hash = new WeakMap()) {
+  if (obj === null) return null;
+  if (obj instanceof Date) return new Date(obj);
+  if (obj instanceof RegExp) return new RegExp(obj);
+  if (typeof obj !== "object") return obj;
+  if (hash.has(obj)) return hash.get(obj);
+  let cloneObj = new obj.constructor();
+  hash.set(obj, cloneObj);
+  for (let key in obj) {
+    if (obj.hasOwnproperty(key)) {
+      cloneObj[key] = deepCopy(obj[key], hash);
+    }
+  }
+  return cloneOjb;
+}
