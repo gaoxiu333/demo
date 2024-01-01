@@ -1,6 +1,6 @@
-let msg = "hello world";
+var msg = "hello world";
 console.log(msg);
-let numA = 6;
-let numB = 12;
-let num = numA + numB;
+var numA = 6;
+var numB = 12;
+var num = numA + numB;
 console.log(num);
