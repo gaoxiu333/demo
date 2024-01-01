@@ -4,13 +4,12 @@ function bubbleSort(originalArray) {
   for (let i = 1; i < array.length; i += 1) {
     swapped = false;
     for (let j = 0; j < array.length - 1; j += 1) {
-    //   console.log(j, array[j + 1], array[j], array[j + 1] < array[j]);
+      //   console.log(j, array[j + 1], array[j], array[j + 1] < array[j]);
       if (array[j + 1] < array[j]) {
         [array[j], array[j + 1]] = [array[j + 1], array[j]];
         swapped = true;
       }
     }
-    console.log("i", i);
     if (!swapped) return array;
   }
   return array;
