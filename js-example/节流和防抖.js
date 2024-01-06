@@ -1,4 +1,5 @@
 // 节流，立即触发
+import { timeFrom } from "../../../source-code/vite/packages/vite/src/node/utils";
 // 因为定义的时间已经确定，执行时，delay应该已经触发
 function throttle(fn, delay = 500) {
   let oldtime = Date.now();
