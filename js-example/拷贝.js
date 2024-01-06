@@ -52,3 +52,30 @@ function deepCopy(obj, hash = new WeakMap()) {
   }
   return cloneOjb;
 }
+
+function shallowClone(target) {
+  if (typeof target !== "object") return target;
+  if (target === null) return null;
+  const clone = Array.isArray(target) ? [] : {};
+  const keys = Object.keys(target);
+  for (let key in keys) {
+    clone[key] = target[key];
+  }
+  return clone;
+}
+
+function deepClone(target, hash = new WeakMap()) {
+  if (target === null) return null;
+  if (typeof target !== "object") return target;
+  if (target instanceof Date) return new Date(target);
+  if (target instanceof RegExp) return new RegExp(target);
+  if (hash(target)) return hash.get(target);
+  const clone = new target.constructor();
+  hash.set(target, clone);
+  for (let key in target) {
+    if (target.hasOwnproperty(key)) {
+      clone[key] = target(key);
+    }
+  }
+  return clone;
+}
